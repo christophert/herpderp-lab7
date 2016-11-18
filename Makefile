@@ -4,7 +4,6 @@ lab7: getinput.o verify.o code.o
 	g++ --std=c++11 getinput.o verify.o code.o -o lab7
 
 test:
-	rm lab7-afl
 	afl-g++ --std=c++11 getinput.cpp verify.cpp code.cpp -o lab7-afl
 	valgrind --leak-check=full -v ./lab7 < test-input
 #	cppcheck --std=c++11 --enable=all code.cpp verify.cpp getinput.cpp
