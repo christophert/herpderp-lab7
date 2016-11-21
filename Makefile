@@ -1,7 +1,7 @@
 all: lab7
 
 lab7: getinput.o verify.o code.o
-	g++ --std=c++11 getinput.o verify.o code.o -o lab7
+	g++ -fsanititze=address --ggdb --disable-shared --std=c++11 getinput.o verify.o code.o -o lab7
 
 test:
 #	afl-g++ --std=c++11 getinput.cpp verify.cpp code.cpp -o lab7-afl
@@ -20,4 +20,4 @@ code.o: code.cpp
 	g++ --std=c++11 -c code.cpp
 
 clean:
-	rm *o lab7
+	rm -f *o lab7
