@@ -11,13 +11,13 @@ test:
 	zzuf -s 0:1000 -c -C 0 -q -T 3 ./lab7 < test-input
 
 getinput.o: getinput.cpp
-	g++ -g -Wall --disable-shared --std=c++11 -c getinput.cpp
+	g++ -g -Wall --std=c++11 -c getinput.cpp
 
 verify.o: verify.cpp
-	g++ -g -Wall --disable-shared --std=c++11 -c verify.cpp
+	g++ -g -Wall --std=c++11 -c verify.cpp
 
 code.o: code.cpp
-	g++ -g -Wall --disable-shared --std=c++11 -c code.cpp
+	g++ -g -Wall --std=c++11 -c code.cpp
 
 clean:
 	rm -f *o lab7
